@@ -11,9 +11,14 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func aboutPage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>About page!</h1>")
 }
+
+func contactPage(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>Contact page!</h1>")
+}
 func main() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/about", aboutPage)
+	http.HandleFunc("/contact", contactPage)
 	fmt.Println("Starting server on the port 8080...")
 	http.ListenAndServe(":8080", nil)
 }
